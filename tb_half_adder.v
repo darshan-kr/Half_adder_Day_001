@@ -1,12 +1,12 @@
-module tb;
+module tb_half_adder;
   reg a, b;
-  wire sum, carry;
+  wire  carry, sum;
   
-  half_adder a1(a, b, sum, carry);
+  half_adder a1(a, b,  carry, sum);
   
   initial begin
     $dumpfile("dump.vcd"); $dumpvars;
-    $monitor("a=%b, b=%b, sum = %b, carry = %b", a, b, sum, carry);
+    $monitor("a=%b, b=%b,  carry= %b, sum = %b", a, b, carry , sum);
     a = 1'b1; b = 1'b1; 
     #3;
     a = 1'b1; b = 1'b0;
